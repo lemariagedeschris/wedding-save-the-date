@@ -38,3 +38,12 @@ a {
     text-decoration: none;
     margin-top: 20px;
 }
+#languageSelector a {
+    text-decoration: underline;
+    color: #000;
+    cursor: pointer;
+}
+
+#englishContent, #frenchContent {
+    display: none;
+}
