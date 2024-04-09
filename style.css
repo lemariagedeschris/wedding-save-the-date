@@ -1,33 +1,70 @@
+/* Reset some basic elements */
+html, body, div, span, applet, object, iframe,
+h1, h2, p, a {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f0eae2;
-    text-align: center;
-    padding: 20px;
+    line-height: 1;
+    background-image: url('world-map.png'); /* Set the background image */
+    background-size: cover; /* Ensure it covers the entire page */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-attachment: fixed; /* Fix the background image during scroll */
 }
 
 #container {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.8); /* Slight transparency to show the wallpaper */
     margin: auto;
     width: 80%;
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: relative; /* Ensure the container is positioned relative to background */
+    top: 50px; /* Provide some spacing from the top */
+}
+
+#languageSelector a {
+    text-decoration: underline;
+    color: #000;
+    cursor: pointer;
+    font-size: 16px; /* Make sure this is readable on all devices */
+    padding: 5px 10px; /* Space out the clickable area for better touch support */
+}
+
+#englishContent, #frenchContent {
+    display: none; /* Initially hide the content until language is chosen */
 }
 
 h1 {
     color: #8a5a44;
+    font-size: 36px; /* Make it big and readable */
+    padding-top: 20px; /* Space from the top */
 }
 
 h2 {
     color: #9b6b54;
+    font-size: 30px; /* Make it slightly smaller than h1 but still prominent */
 }
 
 #countdown {
-    font-size: 24px;
+    font-size: 24px; /* Large enough to be easily read */
     margin: 20px 0;
 }
 
 #info p {
     line-height: 1.6;
+    font-size: 18px; /* Comfortable reading size */
 }
 
 a {
@@ -37,13 +74,32 @@ a {
     padding: 10px 20px;
     text-decoration: none;
     margin-top: 20px;
-}
-#languageSelector a {
-    text-decoration: underline;
-    color: #000;
-    cursor: pointer;
+    border-radius: 5px; /* Slight rounding of corners for aesthetic */
 }
 
-#englishContent, #frenchContent {
-    display: none;
+@media screen and (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+
+    #container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    #countdown {
+        font-size: 20px;
+    }
+
+    #info p {
+        font-size: 16px;
+    }
 }
