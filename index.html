@@ -4,36 +4,54 @@
     <meta charset="UTF-8">
     <title>Save the Date</title>
     <link rel="stylesheet" href="style.css">
-    <script>
-        function updateCountdown() {
-            const countToDate = new Date("July 5, 2025 00:00:00").getTime();
-            const now = new Date().getTime();
-            const difference = countToDate - now;
-            
-            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-            
-            document.getElementById("countdown").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-            
-            if (difference < 0) {
-                clearInterval(x);
-                document.getElementById("countdown").innerHTML = "EXPIRED";
-            }
+<script>
+    function updateCountdown() {
+        const countToDate = new Date("July 5, 2025 00:00:00").getTime();
+        const now = new Date().getTime();
+        const difference = countToDate - now;
+        
+        // Calculate total difference in days first
+        const totalDays = Math.floor(difference / (1000 * 60 * 60 * 24));
+        
+        // Convert some of these days into months
+        const targetDate = new Date("July 5, 2025 00:00:00");
+        const currentDate = new Date();
+        let months = (targetDate.getFullYear() - currentDate.getFullYear()) * 12;
+        months -= currentDate.getMonth();
+        months += targetDate.getMonth();
+        if (months < 0) months = 0; // In case the date is past
+        
+        // Calculate the remainder days after subtracting months
+        let days = totalDays % 30; // Simplified approach, assuming an average of 30 days per month
+        if (days < 0) days = 0; // Adjust in case of negative days
+        
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+        
+        document.getElementById("countdown").innerHTML = months + "M " + days + "D " + hours + "H "
+        + minutes + "M " + seconds + "S ";
+        
+        // If the countdown is over, show expired message
+        if (difference < 0) {
+            clearInterval(x);
+            document.getElementById("countdown").innerHTML = "EXPIRED";
         }
-        setInterval(updateCountdown, 1000);
+    }
+    // Update the countdown every second
+    setInterval(updateCountdown, 1000);
 
-        function toggleLanguage(lang) {
-            if (lang === 'en') {
-                document.getElementById("englishContent").style.display = "block";
-                document.getElementById("frenchContent").style.display = "none";
-            } else {
-                document.getElementById("englishContent").style.display = "none";
-                document.getElementById("frenchContent").style.display = "block";
-            }
+    function toggleLanguage(lang) {
+        if (lang === 'en') {
+            document.getElementById("englishContent").style.display = "block";
+            document.getElementById("frenchContent").style.display = "none";
+        } else {
+            document.getElementById("englishContent").style.display = "none";
+            document.getElementById("frenchContent").style.display = "block";
         }
-    </script>
+    }
+</script>
+
 </head>
 <body onload="toggleLanguage('en')">
     <div id="languageSelector" style="position:absolute; top:0; left:0; padding:10px;">
