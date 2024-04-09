@@ -6,8 +6,10 @@
     <title>Save the Date</title>
     <link rel="stylesheet" href="style.css">
 <script>
+    let currentLang = 'en'; // Default language
+
     function updateCountdown() {
-        const targetDate = new Date("July 5, 2025 16:00:00");
+        const targetDate = new Date("July 5, 2025 00:00:00");
         const now = new Date();
         const difference = targetDate - now;
 
@@ -18,12 +20,10 @@
             months += 12; // Adjust month difference when it's negative
         }
 
-        // Calculate the days difference accurately considering the month lengths and leap years
         let days = targetDate.getDate() - now.getDate();
         if (days < 0) {
             months--;
-            // Adjust days difference by adding days of the previous month (from current date)
-            const previousMonth = new Date(now.getFullYear(), now.getMonth(), 0); // 0 gets the last day of the previous month
+            const previousMonth = new Date(now.getFullYear(), now.getMonth(), 0);
             days += previousMonth.getDate();
             if (months < 0) {
                 years--;
@@ -35,18 +35,23 @@
         const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-        document.getElementById("countdown").innerHTML = (years ? years + "Y " : "") + months + "M " + days + "D " + hours + "H " + minutes + "M " + seconds + "S ";
+        // Display text based on current language
+        const displayYears = years + (currentLang === 'en' ? "Year " : " An ");
+        const displayMonths = months + (currentLang === 'en' ? "Month " : " Mois ");
+        const displayDays = days + (currentLang === 'en' ? "Day " : " Jour ");
+        const displayTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
 
-        // If the countdown is over, show expired message
+        document.getElementById("countdown").innerHTML = displayYears + displayMonths + displayDays + displayTime;
+
         if (difference < 0) {
             clearInterval(x);
             document.getElementById("countdown").innerHTML = "EXPIRED";
         }
     }
-    // Update the countdown every second
     setInterval(updateCountdown, 1000);
 
     function toggleLanguage(lang) {
+        currentLang = lang; // Update current language
         if (lang === 'en') {
             document.getElementById("englishContent").style.display = "block";
             document.getElementById("frenchContent").style.display = "none";
@@ -56,7 +61,6 @@
         }
     }
 </script>
-
 
 </head>
 <body onload="toggleLanguage('en')">
