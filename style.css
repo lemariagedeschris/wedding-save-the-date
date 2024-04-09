@@ -1,0 +1,40 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0eae2;
+    text-align: center;
+    padding: 20px;
+}
+
+#container {
+    background-color: white;
+    margin: auto;
+    width: 80%;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+h1 {
+    color: #8a5a44;
+}
+
+h2 {
+    color: #9b6b54;
+}
+
+#countdown {
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+#info p {
+    line-height: 1.6;
+}
+
+a {
+    display: inline-block;
+    background-color: #8a5a44;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin-top: 20px;
+}
