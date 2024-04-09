@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Save the Date</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // JavaScript for countdown goes here
+        function updateCountdown() {
+            const countToDate = new Date("July 5, 2025 00:00:00").getTime();
+            const now = new Date().getTime();
+            const difference = countToDate - now;
+            
+            // Time calculations for days, hours, minutes, and seconds
+            const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+            
+            // Output the result in an element with id="countdown"
+            document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+            + minutes + "m " + seconds + "s ";
+            
+            // If the countdown is over, write some text 
+            if (difference < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "EXPIRED";
+            }
+        }
+        // Update the countdown every second
+        setInterval(updateCountdown, 1000);
+    </script>
+</head>
+<body>
+    <div id="container">
+        <h1>SAVE THE DATE</h1>
+        <h2>Christine + Christophe</h2>
+        <div id="countdown"></div>
+        <div id="info">
+            <p>Are getting married!<br>
+            July 5th, 2025<br>
+            Join us for a weekend celebration at L’Anglechere, Sainte-Anne (near Vendome), France<br>
+            We’d love to get a preliminary headcount - Please let us know if you're thinking of joining us using the following RSVP link.<br>
+            Formal invitation to follow</p>
+            <p>Se marient!<br>
+            Le 5 juillet 2025<br>
+            Rejoignez-nous pour une célébration le temps d'un week-end à L'Anglechère, Sainte-Anne (près de Vendôme), France<br>
+            Dites-nous si vous envisagez de vous joindre à nous en utilisant le lien de RSVP suivant.<br>
+            Le faire-part suivra, promis, on ne vous oublie pas !</p>
+            <a href="LINK_TO_YOUR_RSVP_FORM" target="_blank">RSVP Here / RSVP ici</a>
+        </div>
+    </div>
+</body>
+</html>
