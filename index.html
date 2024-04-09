@@ -36,9 +36,9 @@
         const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
         // Display text based on current language
-        const displayYears = years + (currentLang === 'en' ? "Year " : " An ");
-        const displayMonths = months + (currentLang === 'en' ? "Month " : " Mois ");
-        const displayDays = days + (currentLang === 'en' ? "Day " : " Jour ");
+        const displayYears = years + (currentLang === 'en' ? " Year " : " An ");
+        const displayMonths = months + (currentLang === 'en' ? " Month " : " Mois ");
+        const displayDays = days + (currentLang === 'en' ? " Day " : " Jour ");
         const displayTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
 
         document.getElementById("countdown").innerHTML = displayYears + displayMonths + displayDays + displayTime;
