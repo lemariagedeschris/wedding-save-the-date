@@ -1,11 +1,11 @@
-/* Reset some basic elements */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@100&display=swap');
+
+/* Reset styling */
 html, body, div, span, applet, object, iframe,
 h1, h2, p, a {
     margin: 0;
     padding: 0;
     border: 0;
-    font-size: 100%;
-    font: inherit;
     vertical-align: baseline;
 }
 
@@ -17,45 +17,89 @@ footer, header, hgroup, menu, nav, section {
 
 body {
     line-height: 1;
-    background-image: url('world-map.png'); /* Set the background image */
+    background-image: url('world-map.png'); /* Update the file path if your image is located in a different directory */
     background-size: cover; /* Ensure it covers the entire page */
     background-position: center; /* Center the background image */
     background-repeat: no-repeat; /* Do not repeat the image */
     background-attachment: fixed; /* Fix the background image during scroll */
+    font-family: 'Fraunces', serif; /* Apply the Fraunces font */
+    font-weight: 100; /* Apply the thin weight */
+    color: #000; /* Set the text color to black */
 }
 
+/* Container for content */
 #container {
-    background-color: rgba(255, 255, 255, 0.8); /* Slight transparency to show the wallpaper */
     margin: auto;
-    width: 80%;
+    max-width: 800px; /* Set a max-width for larger screens */
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    position: relative; /* Ensure the container is positioned relative to background */
-    top: 50px; /* Provide some spacing from the top */
+    text-align: center; /* Center the text inside the container */
+}
+
+/* Language selector at the top */
+#languageSelector {
+    position: absolute;
+    top: 10px;
+    left: 10px;
 }
 
 #languageSelector a {
     text-decoration: underline;
     color: #000;
     cursor: pointer;
-    font-size: 16px; /* Make sure this is readable on all devices */
-    padding: 5px 10px; /* Space out the clickable area for better touch support */
+    font-family: 'Fraunces', serif;
+    font-weight: 100;
 }
 
-#englishContent, #frenchContent {
-    display: none; /* Initially hide the content until language is chosen */
+/* Styling for headers and paragraphs */
+h1, h2, p, a {
+    font-family: 'Fraunces', serif;
+    font-weight: 100;
+    color: #000; /* Ensure all text is black */
 }
 
 h1 {
-    color: #8a5a44;
-    font-size: 36px; /* Make it big and readable */
-    padding-top: 20px; /* Space from the top */
+    font-size: 3em; /* Large size for main heading */
+    margin-bottom: 0.5em;
 }
 
 h2 {
-    color: #9b6b54;
-    font-size: 30px; /* Make it slightly smaller than h1 but still prominent */
+    font-size: 2.5em; /* Slightly smaller for subheading */
+    margin-bottom: 0.75em;
 }
+
+/* Countdown timer style */
+#countdown {
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+/* Information text */
+#info p {
+    font-size: 1.25em; /* Comfortable reading size */
+    margin-bottom: 1em;
+}
+
+/* RSVP link button */
+a {
+    display: inline-block;
+    background-color: #ffffff; /* White background for visibility */
+    color: #000;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin-top: 20px;
+    border: 1px solid #000; /* Black border */
+    border-radius: 5px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 2em; /* Smaller font size on mobile */
+    }
+
+    h2 {
+        font-size: 1.75em;
+    }
 
 #countdown {
     font-size: 24px; /* Large enough to be easily read */
