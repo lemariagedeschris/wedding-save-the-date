@@ -43,17 +43,16 @@ body {
 }
 
 #languageSelector a {
-    text-decoration: none; /* Removes underline from links */
-    color: #ffffff; /* Changes text color to white for visibility, adjust as needed */
+    text-decoration: none; /* Keeps links without underline, add if you prefer */
+    color: #000; /* Changes text color to black */
     cursor: pointer;
     font-family: 'Fraunces', serif;
     font-weight: 100;
     background-color: transparent; /* Ensures no background color */
-    border: none; /* Removes border */
-    padding: 5px 10px; /* Adjust padding as desired */
-    margin-right: 10px; /* Adds some space between the links */
+    border: none; /* Ensures no border */
+    padding: 5px 10px; /* Adjust padding as needed */
+    margin-right: 10px; /* Adjusts spacing between the links */
 }
-
 
 /* Styling for headers and paragraphs */
 h1, h2, p, a {
