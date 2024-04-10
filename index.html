@@ -7,62 +7,64 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@100&display=swap" rel="stylesheet">
 <script>
-    let currentLang = 'en'; // Default language
+let currentLang = 'en'; // Default language
 
-    function updateCountdown() {
-        const targetDate = new Date("July 5, 2025 00:00:00");
-        const now = new Date();
-        const difference = targetDate - now;
+function updateCountdown() {
+    const targetDate = new Date("July 5, 2025 00:00:00");
+    const now = new Date();
+    const difference = targetDate - now;
 
-        let years = targetDate.getFullYear() - now.getFullYear();
-        let months = targetDate.getMonth() - now.getMonth();
+    let years = targetDate.getFullYear() - now.getFullYear();
+    let months = targetDate.getMonth() - now.getMonth();
+    if (months < 0) {
+        years--;
+        months += 12; // Adjust month difference when it's negative
+    }
+
+    let days = targetDate.getDate() - now.getDate();
+    if (days < 0) {
+        months--;
+        const previousMonth = new Date(now.getFullYear(), now.getMonth(), 0);
+        days += previousMonth.getDate();
         if (months < 0) {
             years--;
-            months += 12; // Adjust month difference when it's negative
-        }
-
-        let days = targetDate.getDate() - now.getDate();
-        if (days < 0) {
-            months--;
-            const previousMonth = new Date(now.getFullYear(), now.getMonth(), 0);
-            days += previousMonth.getDate();
-            if (months < 0) {
-                years--;
-                months += 12;
-            }
-        }
-
-        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-        // Display text based on current language
-        const displayYears = years + (currentLang === 'en' ? " Year " : " An ");
-        const displayMonths = months + (currentLang === 'en' ? " Month " : " Mois ");
-        const displayDays = days + (currentLang === 'en' ? " Day " : " Jour ");
-        const displayTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-
-        document.getElementById("countdown").innerHTML = displayYears + displayMonths + displayDays + displayTime;
-
-        if (difference < 0) {
-            clearInterval(x);
-            document.getElementById("countdown").innerHTML = "EXPIRED";
+            months += 12;
         }
     }
-    setInterval(updateCountdown, 1000);
 
-    function toggleLanguage(lang) {
-        currentLang = lang; // Update current language
-        if (lang === 'en') {
-            document.getElementById("englishContent").style.display = "block";
-            document.getElementById("frenchContent").style.display = "none";
-        } else {
-            document.getElementById("englishContent").style.display = "none";
-            document.getElementById("frenchContent").style.display = "block";
-        }
+    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+    // Display text based on current language
+    const displayYears = years + (currentLang === 'en' ? " Year " : " An ");
+    const displayMonths = months + (currentLang === 'en' ? " Month " : " Mois ");
+    const displayDays = days + (currentLang === 'en' ? " Day " : " Jour ");
+    const displayTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+    const countdownText = displayYears + displayMonths + displayDays + displayTime;
+    document.getElementById("countdownEN").innerHTML = countdownText;
+    document.getElementById("countdownFR").innerHTML = countdownText;
+
+    if (difference < 0) {
+        clearInterval(x);
+        document.getElementById("countdownEN").innerHTML = "EXPIRED";
+        document.getElementById("countdownFR").innerHTML = "EXPIRED";
     }
+}
+setInterval(updateCountdown, 1000);
+
+function toggleLanguage(lang) {
+    currentLang = lang; // Update current language
+    if (lang === 'en') {
+        document.getElementById("englishContent").style.display = "block";
+        document.getElementById("frenchContent").style.display = "none";
+    } else {
+        document.getElementById("englishContent").style.display = "none";
+        document.getElementById("frenchContent").style.display = "block";
+    }
+}
 </script>
-
 </head>
 <body onload="toggleLanguage('en')">
     <div id="languageSelector" style="position:absolute; top:0; left:0; padding:10px;">
@@ -71,27 +73,23 @@
     <div id="container">
         <h1>SAVE THE DATE</h1>
         <h2>Christine + Christophe</h2>
-        <div id="countdown"></div>
         <div id="englishContent">
             <p>Are getting married!<br>
-                
             July 5th, 2025<br>
-                
+            <div id="countdownEN"></div>
             Join us for a weekend celebration at L’Anglechere, Sainte-Anne (near Vendome), France<br>
-                
             We’d love to get a preliminary headcount - Please let us know if you're thinking of joining us using the following RSVP link.<br>
-            Formal invitation to follow</p>
+            Formal invitation to follow.</p>
             <a href="rsvp.html" target="_blank">RSVP Here</a>
-
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd-7QSiQ-1KVfhFKSSyGlQWXJ6EkCPgNbDUK8NNL8K76RkgwQ/viewform?embedded=true" width="640" height="1478" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
         </div>
-        <div id="frenchContent">
+        <div id="frenchContent" style="display:none;">
             <p>Se marient!<br>
             Le 5 juillet 2025<br>
+            <div id="countdownFR"></div>
             Rejoignez-nous pour une célébration le temps d'un week-end à L'Anglechère, Sainte-Anne (près de Vendôme), France<br>
             Dites-nous si vous envisagez de vous joindre à nous en utilisant le lien de RSVP suivant.<br>
-            Le faire-part suivra, promis, on ne vous oublie pas !</p>
-            <a href="LINK_TO_YOUR_RSVP_FORM" target="_blank">RSVP ici</a>
+            Le faire-part suivra.</p>
+            <a href="rsvp.html" target="_blank">RSVP ici</a>
         </div>
     </div>
 </body>
