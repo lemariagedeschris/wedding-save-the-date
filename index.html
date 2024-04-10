@@ -18,14 +18,14 @@ function updateCountdown() {
     let months = targetDate.getMonth() - now.getMonth();
     if (months < 0) {
         years--;
-        months += 12; // Adjust month difference when it's negative
+        months += 12;
     }
 
     let days = targetDate.getDate() - now.getDate();
     if (days < 0) {
         months--;
         const previousMonth = new Date(now.getFullYear(), now.getMonth(), 0);
-        days += previousMonth.getDate(); // Adjust for the end of the month
+        days += previousMonth.getDate();
         if (months < 0) {
             years--;
             months += 12;
@@ -36,12 +36,10 @@ function updateCountdown() {
     const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-    // Updated display format with 'h', 'mins', 's'
     const displayTime = hours.toString().padStart(2, '0') + "h " 
                       + minutes.toString().padStart(2, '0') + "mins " 
                       + seconds.toString().padStart(2, '0') + "s";
 
-    // Display text based on current language
     const displayYears = years + (currentLang === 'en' ? " Year " : " An ");
     const displayMonths = months + (currentLang === 'en' ? " Month " : " Mois ");
     const displayDays = days + (currentLang === 'en' ? " Day " : " Jour ");
@@ -59,7 +57,7 @@ function updateCountdown() {
 setInterval(updateCountdown, 1000);
 
 function toggleLanguage(lang) {
-    currentLang = lang; // Update current language
+    currentLang = lang;
     if (lang === 'en') {
         document.getElementById("englishContent").style.display = "block";
         document.getElementById("frenchContent").style.display = "none";
@@ -76,21 +74,23 @@ function toggleLanguage(lang) {
     </div>
     <div id="container">
         <h1>SAVE THE DATE</h1>
-        <h2>Christine & Christophe</h2>
-        <h2>Are getting married!</h2>
-        <h2>July 5th, 2025 ... <span id="countdownEN"></span><br></h2>
+        <h2>Christine + Christophe</h2>
         <div id="englishContent">
-    <p>Join us for a weekend celebration at L’Anglechere, Sainte-Anne (near Vendome), France<br>
-    We’d love to get a preliminary headcount - Please let us know if you're thinking of joining us using the following RSVP link.<br>
-    Formal invitation to follow.</p>
-    <a href="rsvp_en.html" target="_blank">RSVP Here</a>
-</div>
-<div id="frenchContent" style="display:none;">
-    <p>Rejoignez-nous pour une célébration le temps d'un week-end à L'Anglechère, Sainte-Anne (près de Vendôme), France<br>
-    Dites-nous si vous envisagez de vous joindre à nous en utilisant le lien de RSVP suivant.<br>
-    Le faire-part suivra.</p>
-    <a href="rsvp_fr.html" target="_blank">RSVP ici</a>
-</div>
+            <p>Are getting married!<br>
+            <span class="date-countdown">July 5th, 2025 ... <span id="countdownEN"></span></span><br>
+            Join us for a weekend celebration at L’Anglechere, Sainte-Anne (near Vendome), France<br>
+            We’d love to get a preliminary headcount - Please let us know if you're thinking of joining us using the following RSVP link.<br>
+            Formal invitation to follow...</p>
+            <a href="rsvp_en.html" target="_blank">RSVP Here</a>
+        </div>
+        <div id="frenchContent" style="display:none;">
+            <p>Se marient!<br>
+            <span class="date-countdown">Le 5 juillet 2025 ... <span id="countdownFR"></span></span><br>
+            Rejoignez-nous pour une célébration le temps d'un week-end à L'Anglechère, Sainte-Anne (près de Vendôme), France<br>
+            Dites-nous si vous envisagez de vous joindre à nous en utilisant le lien de RSVP suivant.<br>
+            Le faire-part suivra...</p>
+            <a href="rsvp_fr.html" target="_blank">RSVP ici</a>
+        </div>
     </div>
 </body>
 </html>
