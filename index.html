@@ -25,7 +25,7 @@ function updateCountdown() {
     if (days < 0) {
         months--;
         const previousMonth = new Date(now.getFullYear(), now.getMonth(), 0);
-        days += previousMonth.getDate();
+        days += previousMonth.getDate(); // Adjust for the end of the month
         if (months < 0) {
             years--;
             months += 12;
@@ -36,13 +36,17 @@ function updateCountdown() {
     const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
+    // Updated display format with 'h', 'mins', 's'
+    const displayTime = hours.toString().padStart(2, '0') + "h " 
+                      + minutes.toString().padStart(2, '0') + "mins " 
+                      + seconds.toString().padStart(2, '0') + "s";
+
     // Display text based on current language
     const displayYears = years + (currentLang === 'en' ? " Year " : " An ");
     const displayMonths = months + (currentLang === 'en' ? " Month " : " Mois ");
     const displayDays = days + (currentLang === 'en' ? " Day " : " Jour ");
-    const displayTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-
     const countdownText = displayYears + displayMonths + displayDays + displayTime;
+
     document.getElementById("countdownEN").innerHTML = countdownText;
     document.getElementById("countdownFR").innerHTML = countdownText;
 
