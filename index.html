@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Save the Date</title>
-    <!-- Google Fonts link for Dancing Script and Fraunces -->
+    <!-- Google Fonts for Dancing Script and Fraunces -->
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap&family=Fraunces:wght@100&display=swap" rel="stylesheet">
     <style>
         /* Reset styling */
@@ -16,7 +16,7 @@
             vertical-align: baseline;
         }
 
-        /* Section, article, etc. styling */
+        /* Structural elements */
         article, aside, details, figcaption, figure,
         footer, header, hgroup, menu, nav, section {
             display: block;
@@ -33,10 +33,8 @@
             font-family: 'Fraunces', serif;
             font-weight: 100;
             color: #000;
-            padding-top: 75.6px; /* Space at the top */
         }
 
-        /* Container for content */
         #container {
             text-align: center;
             max-width: 800px;
@@ -44,7 +42,6 @@
             padding: 20px;
         }
 
-        /* Language selector styling */
         #languageSelector {
             position: absolute;
             top: 10px;
@@ -63,7 +60,6 @@
             margin-right: 10px;
         }
 
-        /* Font styling */
         h1, h2, p, a {
             font-family: 'Fraunces', serif;
             font-weight: 100;
@@ -76,17 +72,23 @@
             line-height: 1.2;
         }
 
+        .the {
+            font-family: 'Dancing Script', cursive;
+            font-size: 40px;
+            font-weight: normal;
+        }
+
+        .ampersand {
+            font-family: 'Dancing Script', cursive;
+            font-size: 40px;
+        }
+
         h2 {
             font-size: 2.5em;
             margin-bottom: 0.75em;
             line-height: 1.3;
         }
 
-        p {
-            line-height: 1.8;
-        }
-
-        /* Countdown specific styles */
         .date-countdown {
             display: block;
             text-align: center;
@@ -108,7 +110,6 @@
             border-radius: 5px;
         }
 
-        /* Responsive settings for smaller screens */
         @media screen and (max-width: 600px) {
             h1, h2 {
                 font-size: 20px;
@@ -157,65 +158,5 @@
             <p>Le faire-part suivra, promis, on ne vous oublie pas!</p>
         </div>
     </div>
-    <script>
-        let currentLang = 'en'; // Default language
-
-        function updateCountdown() {
-            const targetDate = new Date("July 5, 2025 00:00:00");
-            const now = new Date();
-            const difference = targetDate - now;
-
-            let years = targetDate.getFullYear() - now.getFullYear();
-            let months = targetDate.getMonth() - now.getMonth();
-            if (months < 0) {
-                years--;
-                months += 12;
-            }
-
-            let days = targetDate.getDate() - now.getDate();
-            if (days < 0) {
-                months--;
-                days += new Date(now.getFullYear(), now.getMonth(), 0).getDate();
-                if (months < 0) {
-                    years--;
-                    months += 12;
-                }
-            }
-
-            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-            const displayTime = hours.toString().padStart(2, '0') + "h " 
-                              + minutes.toString().padStart(2, '0') + "mins " 
-                              + seconds.toString().padStart(2, '0') + "s";
-
-            const displayYears = years + (currentLang === 'en' ? " Year " : " An ");
-            const displayMonths = months + (currentLang === 'en' ? " Month " : " Mois ");
-            const displayDays = days + (currentLang === 'en' ? " Day " : " Jour ");
-            const countdownText = displayYears + displayMonths + displayDays + displayTime;
-
-            document.getElementById("countdownEN").innerHTML = countdownText;
-            document.getElementById("countdownFR").innerHTML = countdownText;
-
-            if (difference < 0) {
-                clearInterval(x);
-                document.getElementById("countdownEN").innerHTML = "EXPIRED";
-                document.getElementById("countdownFR").innerHTML = "EXPIRED";
-            }
-        }
-        setInterval(updateCountdown, 1000);
-
-        function toggleLanguage(lang) {
-            currentLang = lang;
-            if (lang === 'en') {
-                document.getElementById("englishContent").style.display = "block";
-                document.getElementById("frenchContent").style.display = "none";
-            } else {
-                document.getElementById("englishContent").style.display = "none";
-                document.getElementById("frenchContent").style.display = "block";
-            }
-        }
-    </script>
 </body>
 </html>
