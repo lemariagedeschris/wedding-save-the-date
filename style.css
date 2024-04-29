@@ -27,14 +27,10 @@ body {
 }
 
 #container {
-    display: flex; /* Using flex to align items */
-    flex-direction: column; /* Stack children vertically */
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
-    height: 100vh; /* Use the full height of the viewport */
     margin: auto;
     max-width: 800px;
     padding: 20px;
+    text-align: center;
 }
 
 #languageSelector {
@@ -78,8 +74,8 @@ p {
 }
 
 .date-countdown {
-    text-align: center; /* Center the countdown text */
     font-size: calc(16px + (24 - 16) * (100vw - 400px) / (800 - 400));
+    margin: auto;
 }
 
 #countdown {
@@ -125,4 +121,4 @@ a {
         width: 95%;
         padding: 10px;
     }
-}
+}\
