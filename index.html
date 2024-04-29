@@ -30,6 +30,11 @@
     .bold-names { /* Style to make names bold */
         font-weight: bold;
     }
+    h2 {
+        margin-top: 0; /* Removes top margin */
+        margin-bottom: 0; /* Removes bottom margin */
+        padding: 0; /* Removes padding */
+    }
 </style>
 
 <script>
@@ -38,7 +43,7 @@ let currentLang = 'en'; // Default language
 function updateCountdown() {
     const targetDate = new Date("July 5, 2025 00:00:00");
     const now = new Date();
-    the difference = targetDate - now;
+    const difference = targetDate - now;
 
     let years = targetDate.getFullYear() - now.getFullYear();
     let months = targetDate.getMonth() - now.getMonth();
@@ -59,17 +64,17 @@ function updateCountdown() {
     }
 
     const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    the minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-    the seconds = Math.floor((difference % (1000 * 60)) / 1000);
+    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-    the displayTime = hours.toString().padStart(2, '0') + "h " 
+    const displayTime = hours.toString().padStart(2, '0') + "h " 
                       + minutes.toString().padStart(2, '0') + "mins " 
                       + seconds.toString().padStart(2, '0') + "s";
 
-    the displayYears = years + (currentLang === 'en' ? " Year " : " An ");
-    the displayMonths = months + (currentLang === 'en' ? " Month " : " Mois ");
-    the displayDays = days + (currentLang === 'en' ? " Day " : " Jour ");
-    the countdownText = displayYears + displayMonths + displayDays + displayTime;
+    const displayYears = years + (currentLang === 'en' ? " Year " : " An ");
+    const displayMonths = months + (currentLang === 'en' ? " Month " : " Mois ");
+    const displayDays = days + (currentLang === 'en' ? " Day " : " Jour ");
+    const countdownText = displayYears + displayMonths + displayDays + displayTime;
 
     document.getElementById("countdownEN").innerHTML = countdownText;
     document.getElementById("countdownFR").innerHTML = countdownText;
