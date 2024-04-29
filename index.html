@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Save the Date</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap&family=Fraunces:wght@100&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@100&display=swap');
-
         /* Reset styling */
         html, body, div, span, applet, object, iframe,
         h1, h2, p, a {
@@ -16,11 +17,13 @@
             vertical-align: baseline;
         }
 
+        /* Structural elements */
         article, aside, details, figcaption, figure,
         footer, header, hgroup, menu, nav, section {
             display: block;
         }
 
+        /* Body styling */
         body {
             line-height: 1.6;
             background-image: url('world-map2.png');
@@ -33,6 +36,7 @@
             color: #000;
         }
 
+        /* Container styling */
         #container {
             display: flex;
             flex-direction: column;
@@ -42,14 +46,17 @@
             margin: auto;
             max-width: 800px;
             padding: 20px;
+            text-align: center;
         }
 
+        /* Language selector positioning */
         #languageSelector {
             position: absolute;
             top: 10px;
             left: 10px;
         }
 
+        /* Language selector styling */
         #languageSelector a {
             text-decoration: none;
             color: #000;
@@ -80,12 +87,17 @@
             line-height: 1.3;
         }
 
+        .ampersand {
+            font-family: 'Dancing Script', cursive;
+            font-size: 40px;
+        }
+
         p {
             line-height: 1.8;
         }
 
         .date-countdown {
-            text-align: center;
+            text-align: center; /* Center the countdown text */
             font-size: calc(16px + (24 - 16) * (100vw - 400px) / (800 - 400));
         }
 
@@ -104,35 +116,6 @@
             border: 1px solid #000;
             border-radius: 5px;
         }
-
-        @media screen and (max-width: 600px) {
-            h1, h2 {
-                font-size: 20px;
-                line-height: 1.3;
-            }
-
-            .date-countdown {
-                font-size: 14px;
-            }
-
-            #countdown {
-                font-size: 1.5em;
-            }
-
-            p {
-                font-size: 18px;
-                line-height: 1.8;
-            }
-
-            a {
-                padding: 10px 20px;
-            }
-
-            #container {
-                width: 95%;
-                padding: 10px;
-            }
-        }
     </style>
 </head>
 <body>
@@ -141,8 +124,8 @@
         <a href="javascript:void(0)" onclick="toggleLanguage('fr')">French</a>
     </div>
     <div id="container">
-        <h1>SAVE the DATE</h1>
-        <h2>CHRISTINE & CHRISTOPHE</h2>
+        <h1>SAVE <span class="the">the</span> DATE</h1>
+        <h2>CHRISTINE <span class="ampersand">&</span> CHRISTOPHE</h2>
         <div id="englishContent">
             <h2>Are getting married!</h2>
             <p>Join us for a weekend celebration at L’Anglechere, Sainte-Anne (near Vendome), France</p>
@@ -160,19 +143,5 @@
             <p>Le faire-part suivra, promis, on ne vous oublie pas!</p>
         </div>
     </div>
-    <script>
-        // JavaScript for toggling language
-        function toggleLanguage(lang) {
-            var engContent = document.getElementById('englishContent');
-            var frContent = document.getElementById('frenchContent');
-            if (lang === 'en') {
-                engContent.style.display = "block";
-                frContent.style.display = "none";
-            } else {
-                engContent.style.display = "none";
-                frContent.style.display = "block";
-            }
-        }
-    </script>
 </body>
 </html>
