@@ -30,7 +30,7 @@ body {
     margin: auto;
     max-width: 800px;
     padding: 20px;
-    text-align: center;
+    text-align: center; /* Ensures content is centered */
 }
 
 #languageSelector {
@@ -74,11 +74,8 @@ p {
 }
 
 .date-countdown {
-    white-space: nowrap;
-    display: inline-block;
+    text-align: center; /* Center the countdown text */
     font-size: calc(16px + (24 - 16) * (100vw - 400px) / (800 - 400));
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 #countdown {
