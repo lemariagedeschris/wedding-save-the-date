@@ -37,7 +37,12 @@
     }
     /* Specific style to add space before the first paragraph after the h2 */
     .englishContent p:first-of-type, .frenchContent p:first-of-type {
-        margin-top: 150px; /* Adds space at the top, pushing the paragraph down by about 2 cm */
+        margin-top: 75.6px; /* Adds space at the top, pushing the paragraph down by about 2 cm */
+    }
+    .date-countdown {
+        text-align: center; /* Centers the date and countdown text */
+        display: block; /* Ensures that the text is treated as a block for center alignment */
+        width: 100%; /* Ensures it spans the full width for proper centering */
     }
 </style>
 
@@ -111,9 +116,9 @@ function toggleLanguage(lang) {
         <h1 class="date-header">SAVE <span class="the">the</span> DATE</h1>
         <h2 class="bold-names">CHRISTINE <span class="ampersand">&</span> CHRISTOPHE</h2>
         <div id="englishContent">
-            <h2 class="dancing-script">are getting married!</h2>
+            <h2 class="dancing-script">Are getting married!</h2>
             <p>Join us for a weekend celebration at L’Anglechere, Sainte-Anne (near Vendome), France</p>
-            <h2><span class="date-countdown">July 5th, 2025 ... <span id="countdownEN"></span></span></h2>
+            <h2 class="date-countdown"><span>July 5th, 2025 ... <span id="countdownEN"></span></span></h2>
             <p>We’d love to get a preliminary headcount - Please let us know if you're thinking of joining us using the following RSVP link.</p>
             <a href="rsvp_en.html" target="_blank">RSVP Here</a>
             <p>Formal invitation to follow!</p>
@@ -121,7 +126,7 @@ function toggleLanguage(lang) {
         <div id="frenchContent" style="display:none;">
             <h2 class="dancing-script">se marient!</h2>
             <p>Rejoignez-nous pour une célébration le temps d'un week-end à L'Anglechère, Sainte-Anne (près de Vendôme), France, le</p>
-            <h2><span class="date-countdown">5 Juillet 2025 ... <span id="countdownFR"></span></span></h2>
+            <h2 class="date-countdown"><span>5 Juillet 2025 ... <span id="countdownFR"></span></span></h2>
             <p>Dites-nous si vous envisagez de vous joindre à nous en utilisant le lien de RSVP suivant.</p>
             <a href="rsvp_fr.html" target="_blank">RSVP ici</a>
             <p>Le faire-part suivra, promis, on ne vous oublie pas!</p>
