@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Save the Date</title>
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap&family=Fraunces:wght@100&display=swap" rel="stylesheet">
     <style>
         /* Reset styling */
@@ -27,7 +26,7 @@
             font-family: 'Fraunces', serif;
             font-weight: 100;
             color: #000;
-            padding-top: 75.6px; /* Adds space at the top */
+            padding-top: 75.6px;
         }
 
         #container {
@@ -83,9 +82,10 @@
         }
 
         .date-countdown {
-            display: block;
-            text-align: center;
-            font-size: calc(16px + (24 - 16) * (100vw - 400px) / (800 - 400));
+            display: block; /* Ensures the countdown starts on a new line */
+            text-align: center; /* Centers the countdown text */
+            margin-top: 10px; /* Adds a little space above the countdown */
+            font-size: calc(16px + (24 - 16) * (100vw - 400px) / (800 - 400)); /* Responsive font size */
         }
 
         a {
