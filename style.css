@@ -74,8 +74,10 @@ p {
 }
 
 .date-countdown {
+    display: block; /* Ensures the countdown is on its own line */
     font-size: calc(16px + (24 - 16) * (100vw - 400px) / (800 - 400));
     margin: auto;
+    text-align: center; /* Centers the countdown text */
 }
 
 #countdown {
@@ -101,7 +103,7 @@ a {
     }
 
     .date-countdown {
-        font-size: 14px; /* Adjust font size for smaller screens */
+        font-size: 14px; /* Adjusts font size for smaller screens */
     }
 
     #countdown {
