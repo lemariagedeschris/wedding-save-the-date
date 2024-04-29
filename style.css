@@ -1,122 +1,127 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Save the Date</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts link to include Dancing Script -->
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap&family=Fraunces:wght@100&display=swap" rel="stylesheet">
-<style>
-    body {
-        padding-top: 75.6px; /* Adds space at the top, pushing all content down by about 2 cm */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@100&display=swap');
+
+/* Reset styling */
+html, body, div, span, applet, object, iframe,
+h1, h2, p, a {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1.6;
+    background-image: url('world-map.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Fraunces', serif;
+    font-weight: 100;
+    color: #000;
+}
+
+#container {
+    margin: auto;
+    max-width: 800px;
+    padding: 20px;
+    text-align: center;
+}
+
+#languageSelector {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+#languageSelector a {
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+    font-family: 'Fraunces', serif;
+    font-weight: 100;
+    background-color: transparent;
+    border: none;
+    padding: 5px 10px;
+    margin-right: 10px;
+}
+
+h1, h2, p, a {
+    font-family: 'Fraunces', serif;
+    font-weight: 100;
+    color: #000;
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 0.5em;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 0.75em;
+    line-height: 1.3;
+}
+
+p {
+    line-height: 1.8;
+}
+
+.date-countdown {
+    white-space: nowrap;
+    display: inline-block;
+    font-size: calc(16px + (24 - 16) * (100vw - 400px) / (800 - 400));
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#countdown {
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+a {
+    display: inline-block;
+    background-color: #ffffff;
+    color: #000;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin-top: 20px;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 600px) {
+    h1, h2 {
+        font-size: 20px;
+        line-height: 1.3;
     }
-    .date-header {
-        font-size: 60px; /* Larger font size */
-        font-weight: bold; /* Bold text for SAVE and DATE */
-    }
-    .the {
-        font-size: 40px; /* Font size for 'the' */
-        font-family: 'Dancing Script', cursive; /* Dancing Script font for 'the' */
-        font-weight: normal; /* Normal weight to make it unbold */
-    }
-    .dancing-script { /* Style for text using Dancing Script font */
-        font-family: 'Dancing Script', cursive;
-    }
-    .ampersand { /* Style for the '&' using Dancing Script font */
-        font-family: 'Dancing Script', cursive;
-        font-size: 40px; /* Adjusted to match the size of 'the' */
-    }
-    .bold-names { /* Style to make names bold */
-        font-weight: bold;
-    }
-</style>
 
-<script>
-let currentLang = 'en'; // Default language
-
-function updateCountdown() {
-    const targetDate = new Date("July 5, 2025 00:00:00");
-    const now = new Date();
-    the difference = targetDate - now;
-
-    let years = targetDate.getFullYear() - now.getFullYear();
-    let months = targetDate.getMonth() - now.getMonth();
-    if (months < 0) {
-        years--;
-        months += 12;
+    .date-countdown {
+        font-size: 14px; /* Adjust font size for smaller screens */
     }
 
-    let days = targetDate.getDate() - now.getDate();
-    if (days < 0) {
-        months--;
-        const previousMonth = new Date(now.getFullYear(), now.getMonth(), 0);
-        days += previousMonth.getDate();
-        if (months < 0) {
-            years--;
-            months += 12;
-        }
+    #countdown {
+        font-size: 1.5em;
     }
 
-    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    the minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-    the seconds = Math.floor((difference % (1000 * 60)) / 1000);
+    p {
+        font-size: 18px;
+        line-height: 1.8;
+    }
 
-    the displayTime = hours.toString().padStart(2, '0') + "h " 
-                      + minutes.toString().padStart(2, '0') + "mins " 
-                      + seconds.toString().padStart(2, '0') + "s";
+    a {
+        padding: 10px 20px;
+    }
 
-    the displayYears = years + (currentLang === 'en' ? " Year " : " An ");
-    the displayMonths = months + (currentLang === 'en' ? " Month " : " Mois ");
-    the displayDays = days + (currentLang === 'en' ? " Day " : " Jour ");
-    the countdownText = displayYears + displayMonths + displayDays + displayTime;
-
-    document.getElementById("countdownEN").innerHTML = countdownText;
-    document.getElementById("countdownFR").innerHTML = countdownText;
-
-    if (difference < 0) {
-        clearInterval(x);
-        document.getElementById("countdownEN").innerHTML = "EXPIRED";
-        document.getElementById("countdownFR").innerHTML = "EXPIRED";
+    #container {
+        width: 95%;
+        padding: 10px;
     }
 }
-setInterval(updateCountdown, 1000);
-
-function toggleLanguage(lang) {
-    currentLang = lang;
-    if (lang === 'en') {
-        document.getElementById("englishContent").style.display = "block";
-        document.getElementById("frenchContent").style.display = "none";
-    } else {
-        document.getElementById("englishContent").style.display = "none";
-        document.getElementById("frenchContent").style.display = "block";
-    }
-}
-</script>
-</head>
-<body onload="toggleLanguage('en')">
-    <div id="languageSelector" style="position:absolute; top:0; left:0; padding:10px;">
-        <a href="javascript:void(0)" onclick="toggleLanguage('en')">English</a> | <a href="javascript:void(0)" onclick="toggleLanguage('fr')">French</a>
-    </div>
-    <div id="container">
-        <h1 class="date-header">SAVE <span class="the">the</span> DATE</h1>
-        <h2 class="bold-names">CHRISTINE <span class="ampersand">&</span> CHRISTOPHE</h2>
-        <div id="englishContent">
-            <h2 class="dancing-script">Are getting married!</h2>
-            <p>Join us for a weekend celebration at L’Anglechere, Sainte-Anne (near Vendome), France</p>
-            <h2><span class="date-countdown">July 5th, 2025 ... <span id="countdownEN"></span></span></h2>
-            <p>We’d love to get a preliminary headcount - Please let us know if you're thinking of joining us using the following RSVP link.</p>
-            <a href="rsvp_en.html" target="_blank">RSVP Here</a>
-            <p>Formal invitation to follow!</p>
-        </div>
-        <div id="frenchContent" style="display:none;">
-            <h2 class="dancing-script">se marient!</h2>
-            <p>Rejoignez-nous pour une célébration le temps d'un week-end à L'Anglechère, Sainte-Anne (près de Vendôme), France, le</p>
-            <h2><span class="date-countdown">5 Juillet 2025 ... <span id="countdownFR"></span></span></h2>
-            <p>Dites-nous si vous envisagez de vous joindre à nous en utilisant le lien de RSVP suivant.</p>
-            <a href="rsvp_fr.html" target="_blank">RSVP ici</a>
-            <p>Le faire-part suivra, promis, on ne vous oublie pas!</p>
-        </div>
-    </div>
-</body>
-</html>
