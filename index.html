@@ -13,7 +13,7 @@
         font-weight: bold; /* Bold text for SAVE and DATE */
     }
     .the {
-        font-size: 40px; /* Larger font size */
+        font-size: 40px; /* Font size for 'the' */
         font-family: 'Dancing Script', cursive; /* Dancing Script font for 'the' */
         font-weight: normal; /* Normal weight to make it unbold */
     }
@@ -22,7 +22,10 @@
     }
     .ampersand { /* Style for the '&' using Dancing Script font */
         font-family: 'Dancing Script', cursive;
-        font-size: 50px; /* Specific font size for '&' to make it stand out */
+        font-size: 40px; /* Adjusted to match the size of 'the' */
+    }
+    .bold-names { /* Style to make names bold */
+        font-weight: bold;
     }
 </style>
 
@@ -94,7 +97,7 @@ function toggleLanguage(lang) {
     </div>
     <div id="container">
         <h1 class="date-header">SAVE <span class="the">the</span> DATE</h1>
-        <h2>CHRISTINE <span class="ampersand">&</span> CHRISTOPHE</h2>
+        <h2 class="bold-names">CHRISTINE <span class="ampersand">&</span> CHRISTOPHE</h2>
         <div id="englishContent">
             <h2 class="dancing-script">Are getting married!</h2>
             <p>Join us for a weekend celebration at L’Anglechere, Sainte-Anne (near Vendome), France</p>
