@@ -10,11 +10,15 @@
     <style>
         /* Additional styles for Save the Date */
         .date-header {
-            font-size: 24px; /* Larger font size */
+            font-size: 32px; /* Increased font size for header */
             font-weight: bold; /* Bold text */
+            font-family: 'Fasthand', serif; /* Applying Fasthand to the entire header */
         }
         .the {
-            font-family: 'Fasthand', serif; /* Fasthand font */
+            font-family: 'Fasthand', serif; /* Fasthand font for 'the' */
+        }
+        .fasthand { /* Style for text using Fasthand font */
+            font-family: 'Fasthand', serif;
         }
     </style>
 <script>
@@ -86,7 +90,7 @@ function toggleLanguage(lang) {
     <div id="container">
         <h1 class="date-header">SAVE <span class="the">the</span> DATE</h1>
         <h2>Christine & Christophe</h2>
-        <h2>Are getting married!</h2>
+        <h2 class="fasthand">Are getting married!</h2>
         <h2><span class="date-countdown">July 5th, 2025 ... <span id="countdownEN"></span></span></h2>
         <div id="englishContent">
             <p>Join us for a weekend celebration at L’Anglechere, Sainte-Anne (near Vendome), France<br>
@@ -95,6 +99,7 @@ function toggleLanguage(lang) {
             <a href="rsvp_en.html" target="_blank">RSVP Here</a>
         </div>
         <div id="frenchContent" style="display:none;">
+            <h2 class="fasthand">se marrient!</h2>
             <p>Rejoignez-nous pour une célébration le temps d'un week-end à L'Anglechère, Sainte-Anne (près de Vendôme), France<br>
             Dites-nous si vous envisagez de vous joindre à nous en utilisant le lien de RSVP suivant.<br>
             Le faire-part suivra.</p>
