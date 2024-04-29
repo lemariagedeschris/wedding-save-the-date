@@ -27,10 +27,14 @@ body {
 }
 
 #container {
+    display: flex; /* Using flex to align items */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    height: 100vh; /* Use the full height of the viewport */
     margin: auto;
     max-width: 800px;
     padding: 20px;
-    text-align: center; /* Ensures content is centered */
 }
 
 #languageSelector {
