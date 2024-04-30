@@ -124,7 +124,7 @@ p {
 
 .countdown-display {
     font-family: 'Fraunces', serif; /* Ensuring countdown uses Fraunces */
-    font-size: 20px; /* Smaller font size for the countdown */
+    font-size: 5px; /* Smaller font size for the countdown */
 }
 
 a {
