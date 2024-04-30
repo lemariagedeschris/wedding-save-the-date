@@ -145,6 +145,11 @@ a {
 }
 
 @media screen and (max-width: 600px) {
+    body {
+        background-size: contain; /* Ensures the entire image is visible */
+        background-position: top center; /* Adjusts position to top center */
+        background-attachment: scroll; /* Changes attachment to scroll with the page */
+    }
     h1 {
         font-size: 14px;  /* Smaller font size for mobile devices */
         line-height: 1.2; /* Adjusted line-height for better visual appearance */
