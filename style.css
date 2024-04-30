@@ -70,8 +70,8 @@ h2 {
 
 h2.dancing-script {
     font-family: 'Dancing Script', cursive;
-    font-size: 2.5em; /* Adjust the size to match the specific size used in the third line */
-    margin-bottom: 200px; /* Adds 200px margin below the third line */
+    font-size: 2.5em;
+    margin-bottom: 200px;
 }
 
 .date-header {
@@ -103,17 +103,6 @@ p {
     font-size: 24px;
     margin-top: 5px;
     margin-bottom: 10px;
-}
-
-.date-countdown {
-    font-family: 'Dancing Script', cursive; /* Match the font style of the third line */
-    font-size: 2.5em; /* Match the font size of the third line */
-    font-weight: bold; /* Assuming the third line is also bold */
-    display: block;
-    text-align: center;
-    width: 100%;
-    margin-top: 5px;
-    margin-bottom: 50px;
 }
 
 a {
