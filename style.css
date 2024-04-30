@@ -73,12 +73,13 @@ p {
     line-height: 1.8;
 }
 
-#countdown {
+.date-countdown {
     display: block;
     text-align: center;
     width: 100%;
     margin-top: 20px;
-    margin-bottom: 10px; /* Adjusted bottom margin for closer spacing */
+    margin-bottom: 50px; /* Ensured consistent 50px bottom margin */
+    font-size: 2em; /* Ensuring font size is set here for consistency */
 }
 
 p {
