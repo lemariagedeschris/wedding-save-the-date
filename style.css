@@ -124,7 +124,13 @@ p {
 
 .countdown-display {
     font-family: 'Fraunces', serif; /* Ensuring countdown uses Fraunces */
-    font-size: 10px; /* Smaller font size for the countdown */
+    font-size: 20px; /* Smaller font size for the countdown */
+}
+
+/* Adjusting margin after RSVP links */
+a[href*="rsvp_en.html"] + p,
+a[href*="rsvp_fr.html"] + p {
+    margin-top: 300px; /* Increase the margin as needed */
 }
 
 a {
