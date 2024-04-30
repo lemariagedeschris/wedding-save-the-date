@@ -2,7 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap'); /* Importing Dancing Script for the special date */
 
 /* Reset styling */
-html, body, div, span, applet, object, iframe,
+html {
+    font-size: 16px; /* Base font size for the page */
+}
+
+body, div, span, applet, object, iframe,
 h1, h2, p, a {
     margin: 0;
     padding: 0;
@@ -53,16 +57,16 @@ body {
     margin-right: 10px;
 }
 
-h1 {
+h1, .date-header {
     font-family: 'Fraunces', serif;
-    font-size: 60px;
+    font-size: 3.75rem; /* 60px if base is 16px */
     font-weight: bold;
     margin-bottom: 60px;
 }
 
-h2 {
+h2, h2.dancing-script {
     font-family: 'Fraunces', serif;
-    font-size: 2.5em;
+    font-size: 2.5rem; /* 40px if base is 16px */
     margin-top: 0;
     margin-bottom: 0;
     padding: 0;
@@ -74,23 +78,17 @@ h2.dancing-script {
     margin-bottom: 200px; /* Adds 200px margin below the third line */
 }
 
-.date-header {
-    font-size: 60px;
-    font-weight: bold;
-    margin-bottom: 60px;
-}
-
 .the, .ampersand, .dancing-script {
     font-family: 'Dancing Script', cursive;
 }
 
 .the {
-    font-size: 40px;
+    font-size: 2.5rem; /* 40px if base is 16px */
     font-weight: normal;
 }
 
 .ampersand {
-    font-size: 25px;
+    font-size: 1.5625rem; /* 25px if base is 16px */
 }
 
 .bold-names, #englishContent p, #frenchContent p {
@@ -100,7 +98,7 @@ h2.dancing-script {
 p {
     line-height: 1.8;
     font-family: 'Fraunces', serif;
-    font-size: 24px;
+    font-size: 1.5rem; /* 24px if base is 16px */
     margin-top: 5px;
     margin-bottom: 10px;
 }
@@ -109,7 +107,7 @@ p {
     display: block;
     text-align: center;
     width: 100%;
-    font-size: 24px;
+    font-size: 1.5rem; /* 24px if base is 16px */
     font-weight: bold;
     margin-top: 40px;
     margin-bottom: 60px;
@@ -117,14 +115,14 @@ p {
 
 .special-date {
     font-family: 'Dancing Script', cursive; /* Using Dancing Script for the date */
-    font-size: 32px; /* Larger font size for the date */
+    font-size: 2rem; /* 32px if base is 16px */
     color: #333; /* Optional: changing the color to make it stand out */
     margin-bottom: 10px; /* Space between the date and the countdown */
 }
 
 .countdown-display {
     font-family: 'Fraunces', serif; /* Ensuring countdown uses Fraunces */
-    font-size: 10px; /* Smaller font size for the countdown */
+    font-size: 0.625rem; /* 10px if base is 16px */
 }
 
 /* Adjusting margin after RSVP links */
@@ -145,57 +143,7 @@ a {
 }
 
 @media screen and (max-width: 600px) {
-    h1 {
-        font-size: 30px;  /* Smaller font size for mobile devices */
-        line-height: 1.2; /* Adjusted line-height for better visual appearance */
-    }
-
-    .date-header {
-        font-size: 30px; /* Smaller font size for mobile devices */
-    }
-
-    .the, .ampersand, .dancing-script {
-        font-size: 18px; /* Smaller font size for 'the', '&', and any dancing script text */
-    }
-
-    .ampersand {
-        font-size: 18px; /* Specifically ensuring ampersand size adjusts */
-    }
-
-    h2 {
-        font-size: 22px; /* Adjusted font size for h2 elements */
-        margin-bottom: 20px; /* Less margin to save space */
-    }
-
-    h2.dancing-script {
-        margin-bottom: 30px; /* Less margin below elements using Dancing Script */
-    }
-
-    .bold-names, #englishContent p, #frenchContent p {
-        font-size: 18px; /* Smaller font size for names and paragraph texts in content */
-    }
-
-    p {
-        font-size: 16px; /* Smaller font size for paragraphs for better readability on mobile */
-        line-height: 1.6; /* Adjusted line height for better readability */
-    }
-
-    .date-countdown {
-        font-size: 16px; /* Smaller font size for countdown elements */
-        margin-top: 20px; /* Reduced top margin for compact design */
-        margin-bottom: 30px; /* Reduced bottom margin */
-    }
-
-    .countdown-display {
-        font-size: 16px; /* Ensure consistent font size in countdown */
-    }
-
-    a {
-        padding: 8px 16px; /* Smaller padding for links/buttons */
-    }
-
-    #container {
-        width: 95%; /* Full width for smaller screens */
-        padding: 10px; /* Reduced padding */
+    html {
+        font-size: 14px; /* Smaller base font size on mobile */
     }
 }
