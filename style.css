@@ -109,8 +109,8 @@ p {
     width: 100%;
     font-size: 24px;
     font-weight: bold;
-    margin-top: 5px;
-    margin-bottom: 50px;
+    margin-top: 251px; /* Adjusted margin top to 251px */
+    margin-bottom: 251px; /* Adjusted margin bottom to 251px */
 }
 
 a {
