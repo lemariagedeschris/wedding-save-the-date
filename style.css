@@ -53,7 +53,7 @@ body {
 }
 
 h1 {
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Fraunces', serif; /* Updated to use Fraunces */
     font-size: 60px;
     font-weight: bold;
     margin-bottom: 60px; /* Larger size and added bottom margin */
