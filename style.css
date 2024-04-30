@@ -124,11 +124,11 @@ p {
 }
 
 .countdown-font-size {
-    font-size: 20px; /* Adjustable font size for the countdown */
+    font-size: 10px; /* Adjustable font size for the countdown */
 }
 
 .countdown-top-margin {
-    margin-top: 40px; /* Adjustable top margin for the countdown */
+    margin-top: 10px; /* Adjustable top margin for the countdown */
 }
 
 a {
