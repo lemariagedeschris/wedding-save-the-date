@@ -146,7 +146,7 @@ a {
 
 @media screen and (max-width: 600px) {
     h1 {
-        font-size: 30px;  /* Smaller font size for mobile devices */
+        font-size: 14px;  /* Smaller font size for mobile devices */
         line-height: 1.2; /* Adjusted line-height for better visual appearance */
     }
 
@@ -180,8 +180,8 @@ a {
         line-height: 1.6; /* Adjusted line height for better readability */
     }
 
-    .date-countdown {
-        font-size: 16px; /* Smaller font size for countdown elements */
+   .date-countdown {
+        font-size: 1.125rem; /* Adjusted to a smaller size for mobile, e.g., 16px if base is 14px */
         margin-top: 20px; /* Reduced top margin for compact design */
         margin-bottom: 30px; /* Reduced bottom margin */
     }
