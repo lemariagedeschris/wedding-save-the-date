@@ -76,6 +76,7 @@ h2.dancing-script {
     font-size: 60px;
     font-weight: bold;
     margin-bottom: 60px;
+    margin-top: 62px; /* Adds 62px margin above the date */
 }
 
 .the, .ampersand, .dancing-script {
@@ -110,11 +111,7 @@ p {
     font-size: 24px;
     font-weight: bold;
     margin-top: 5px;
-    margin-bottom: 89px; /* Adjusted margin to move the last line by 39px */
-}
-
-.bottom-line {
-    margin-top: 280px; /* Adding 28px margin above the bottom line */
+    margin-bottom: 50px;
 }
 
 a {
