@@ -78,6 +78,12 @@ p {
     text-align: center;
     width: 100%;
     margin-top: 20px;
+    margin-bottom: 10px; /* Adjusted bottom margin for closer spacing */
+}
+
+p {
+    line-height: 1.8;
+    margin-top: 5px; /* If needed, adjust the top margin of paragraphs following the countdown */
 }
 
 #countdown {
