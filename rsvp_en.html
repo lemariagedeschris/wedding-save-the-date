@@ -16,6 +16,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-direction: column; /* Adjust layout for including the back link */
         }
         #ff-compose {
             width: 100%;
@@ -24,11 +25,20 @@
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px; /* Space between form and back link */
+        }
+        a.back-link {
+            color: #000; /* Adjust color as needed */
+            text-decoration: none;
+            font-size: 16px; /* Adjust size as needed */
+            padding: 10px;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.8);
         }
     </style>
 </head>
 <body>
-    <div id="ff-compose"></div>
-    <script async defer src="https://formfacade.com/include/114545678381632828178/form/1FAIpQLSd-7QSiQ-1KVfhFKSSyGlQWXJ6EkCPgNbDUK8NNL8K76RkgwQ/classic.js?div=ff-compose"></script>
+<div id="ff-compose"></div>
+<script async defer src="https://formfacade.com/include/114545678381632828178/form/1FAIpQLSd-7QSiQ-1KVfhFKSSyGlQWXJ6EkCPgNbDUK8NNL8K76RkgwQ/classic.js?div=ff-compose"></script>
 </body>
 </html>
