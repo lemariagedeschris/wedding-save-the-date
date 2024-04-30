@@ -73,7 +73,7 @@ p {
     line-height: 1.8;
 }
 
-.date-countdown {
+#countdown {
     display: block;
     text-align: center;
     width: 100%;
