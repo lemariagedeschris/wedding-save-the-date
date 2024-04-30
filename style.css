@@ -24,6 +24,7 @@ body {
     font-family: 'Fraunces', serif;
     font-weight: 100;
     color: #000;
+    padding-top: 100px; /* Adds space at the top */
 }
 
 #container {
@@ -51,45 +52,62 @@ body {
     margin-right: 10px;
 }
 
-h1, h2, p, a {
-    font-family: 'Fraunces', serif;
-    font-weight: 100;
-    color: #000;
-}
-
 h1 {
-    font-size: 3em;
-    margin-bottom: 0.5em;
-    line-height: 1.2;
+    font-family: 'Dancing Script', cursive;
+    font-size: 60px;
+    font-weight: bold;
+    margin-bottom: 60px; /* Larger size and added bottom margin */
 }
 
 h2 {
+    font-family: 'Fraunces', serif;
     font-size: 2.5em;
-    margin-bottom: 0.75em;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
     line-height: 1.3;
+}
+
+.date-header {
+    font-size: 60px; /* Larger font size */
+    font-weight: bold; /* Bold text for SAVE and DATE */
+    margin-bottom: 60px; /* Adds space below the header */
+}
+
+.the, .ampersand, .dancing-script {
+    font-family: 'Dancing Script', cursive;
+}
+
+.the {
+    font-size: 40px; /* Font size for 'the' */
+    font-weight: normal; /* Normal weight to make it unbold */
+}
+
+.ampersand {
+    font-size: 25px; /* Adjusted to match the size of 'the' */
+}
+
+.bold-names, #englishContent p, #frenchContent p {
+    font-weight: bold;
 }
 
 p {
     line-height: 1.8;
+    font-family: 'Fraunces', serif;
+    font-size: 24px; /* Updated font size */
+    font-weight: 100; /* Updated font weight */
+    margin-top: 5px;
+    margin-bottom: 10px;
 }
 
 .date-countdown {
     display: block;
     text-align: center;
     width: 100%;
-    margin-top: 20px;
-    margin-bottom: 50px; /* Ensured consistent 50px bottom margin */
-    font-size: 2em; /* Ensuring font size is set here for consistency */
-}
-
-p {
-    line-height: 1.8;
-    margin-top: 5px; /* If needed, adjust the top margin of paragraphs following the countdown */
-}
-
-#countdown {
-    font-size: 2em;
-    margin-bottom: 1em;
+    font-size: 24px; /* Manually set font size for countdown */
+    font-weight: bold; /* Manually set font weight to bold */
+    margin-top: 5px; /* Reduced top margin for the date countdown display */
+    margin-bottom: 50px; /* Set bottom margin to create space before the next line */
 }
 
 a {
