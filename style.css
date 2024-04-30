@@ -109,8 +109,8 @@ p {
     width: 100%;
     font-size: 24px;
     font-weight: bold;
-    margin-top: 100px;
-    margin-bottom: 100px; /* Adjusted margin to move the last line by 39px */
+    margin-top: 60px;
+    margin-bottom: 60px; /* Adjusted margin to move the last line by 39px */
 }
 
 a {
