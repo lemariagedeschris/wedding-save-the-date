@@ -130,7 +130,7 @@ p {
 /* Adjusting margin after RSVP links */
 a[href*="rsvp_en.html"] + p,
 a[href*="rsvp_fr.html"] + p {
-    margin-top: 15px; /* Increase the margin as needed */
+    margin-top: 25px; /* Increase the margin as needed */
 }
 
 a {
