@@ -102,12 +102,16 @@ setInterval(updateCountdown, 1000);
 
 function toggleLanguage(lang) {
     currentLang = lang;
+    const dateEN = "July 5th, 2025";
+    const dateFR = "5 juillet 2025";
     if (lang === 'en') {
         document.getElementById("englishContent").style.display = "block";
         document.getElementById("frenchContent").style.display = "none";
+        document.querySelectorAll(".date-display").forEach(el => el.textContent = dateEN);
     } else {
         document.getElementById("englishContent").style.display = "none";
         document.getElementById("frenchContent").style.display = "block";
+        document.querySelectorAll(".date-display").forEach(el => el.textContent = dateFR);
     }
 }
 </script>
