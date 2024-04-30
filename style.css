@@ -70,8 +70,8 @@ h2 {
 }
 
 h2.dancing-script {
-    font-family: 'Dancing Script', cursive;
-    margin-bottom: 200px;
+    font-family: 'Dancing Script', cursive; /* Ensuring this is in Dancing Script */
+    margin-bottom: 200px; /* Adds 200px margin below the third line */
 }
 
 .date-header {
@@ -109,26 +109,22 @@ p {
     display: block;
     text-align: center;
     width: 100%;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 40px;
     margin-bottom: 60px;
 }
 
 .special-date {
-    font-family: 'Dancing Script', cursive;
-    font-size: 32px;
-    color: #333;
-    margin-bottom: 10px;
+    font-family: 'Dancing Script', cursive; /* Using Dancing Script for the date */
+    font-size: 32px; /* Larger font size for the date */
+    color: #333; /* Optional: changing the color to make it stand out */
+    margin-bottom: 10px; /* Space between the date and the countdown */
 }
 
 .countdown-display {
-    font-family: 'Fraunces', serif;
-}
-
-.countdown-font-size {
-    font-size: 10px; /* Adjustable font size for the countdown */
-}
-
-.countdown-top-margin {
-    margin-top: 10px; /* Adjustable top margin for the countdown */
+    font-family: 'Fraunces', serif; /* Ensuring countdown uses Fraunces */
+    font-size: 20px; /* Smaller font size for the countdown */
 }
 
 a {
