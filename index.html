@@ -7,49 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <!-- Google Fonts link to include Dancing Script -->
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Fraunces:wght@100&display=swap" rel="stylesheet">
-<!--<style>
-    body {
-        padding-top: 100px; /* Adds space at the top, pushing all content down by about 2 cm */
-    }
-    .date-header {
-        font-size: 60px; /* Larger font size */
-        font-weight: bold; /* Bold text for SAVE and DATE */
-        margin-bottom: 60px; /* Adds space below the header */
-    }
-    .the {
-        font-size: 40px; /* Font size for 'the' */
-        font-family: 'Dancing Script', cursive; /* Dancing Script font for 'the' */
-        font-weight: normal; /* Normal weight to make it unbold */
-    }
-    .dancing-script { /* Style for text using Dancing Script font */
-        font-family: 'Dancing Script', cursive;
-    }
-    .ampersand { /* Style for the '&' using Dancing Script font */
-        font-family: 'Dancing Script', cursive;
-        font-size: 25px; /* Adjusted to match the size of 'the' */
-    }
-    .bold-names { /* Style to make names bold */
-        font-weight: bold;
-    }
-    h2 {
-        margin-top: 0; /* Removes top margin */
-        margin-bottom: 0; /* Removes bottom margin */
-        padding: 0; /* Removes padding */
-    }
-    #englishContent p, #frenchContent p { /* Selecting paragraph in both language contents */
-        font-size: 24px; /* Manually set font size */
-        font-weight: bold; /* Manually set font weight to normal */
-        margin-top: 250px; /* Adds space above the first paragraph under the countdown */
-        margin-bottom: 10px; /* Reduced bottom margin for the paragraph */
-    }
-    .date-countdown {
-        font-size: 24px; /* Manually set font size for countdown */
-        font-weight: bold; /* Manually set font weight to bold */
-        margin-top: 5px; /* Reduced top margin for the date countdown display */
-        margin-bottom: 50px; /* Setting bottom margin to create space before the next line */
-    }
-</style> -->
-
+    
 <script>
 let currentLang = 'en'; // Default language
 
@@ -127,8 +85,8 @@ function toggleLanguage(lang) {
             <h2 class="dancing-script">are getting married!</h2>
             <p>Join us for a weekend celebration at L’Anglechere, Sainte-Anne (near Vendome), France, on</p>
             <div class="date-countdown">
-                <div>July 5th, 2025 ...</div>
-                <div><span id="countdownEN"></span></div>
+                <div class="date-display special-date">July 5th, 2025 ...</div>
+                <div class="countdown-display"><span id="countdownEN"></span></div>
             </div>
             <p>We’d love to get a preliminary headcount - Please let us know if you're thinking of joining us using the following RSVP link.</p>
             <a href="rsvp_en.html" target="_blank">RSVP Here</a>
@@ -138,8 +96,8 @@ function toggleLanguage(lang) {
             <h2 class="dancing-script">se marient!</h2>
             <p>Rejoignez-nous pour une célébration le temps d'un week-end à L'Anglechère, Sainte-Anne (près de Vendôme), France, le</p>
             <div class="date-countdown">
-                <div>5 juillet 2025 ...</div>
-                <div><span id="countdownFR"></span></div>
+                <div class="date-display special-date">5 juillet 2025 ...</div>
+                <div class="countdown-display"><span id="countdownFR"></span></div>
             </div>
             <p>Dites-nous si vous envisagez de vous joindre à nous en utilisant le lien de RSVP suivant.</p>
             <a href="rsvp_fr.html" target="_blank">RSVP ici</a>
