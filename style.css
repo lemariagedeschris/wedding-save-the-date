@@ -110,7 +110,7 @@ p {
     font-size: 24px;
     font-weight: bold;
     margin-top: 5px;
-    margin-bottom: 50px;
+    margin-bottom: 89px; /* Adjusted margin to move the last line by 39px */
 }
 
 a {
