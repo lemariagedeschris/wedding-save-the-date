@@ -19,13 +19,13 @@
             flex-direction: column; /* Adjust layout for including the back link */
         }
         #ff-compose {
-            width: 100%;
+            width: calc(100% - 40px); /* Allows padding on smaller screens */
             max-width: 600px; /* Adjust this value as needed */
             background: rgba(255, 255, 255, 0.8);
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px; /* Space between form and back link */
+            margin: 20px; /* Ensures spacing on all sides */
         }
         a.back-link {
             color: #000; /* Adjust color as needed */
@@ -34,6 +34,20 @@
             padding: 10px;
             border-radius: 5px;
             background: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            body {
+                justify-content: flex-start; /* Adjust form position on small screens */
+                padding-top: 20px; /* Space from top */
+            }
+            #ff-compose {
+                width: calc(100% - 20px); /* Smaller padding on very small screens */
+            }
+            a.back-link {
+                font-size: 14px; /* Smaller font on mobile */
+            }
         }
     </style>
 </head>
