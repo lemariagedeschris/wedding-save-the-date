@@ -142,6 +142,18 @@ a {
     margin-top: 20px;
     border: none; /* Removing border */
 }
+a[href*="rsvp_en.html"], a[href*="rsvp_fr.html"] {
+    display: inline-block;
+    background-color: #f4f4f4; /* Light grey background */
+    color: #d35400; /* Orange color for the text */
+    padding: 15px 30px; /* Larger padding for better visibility */
+    text-decoration: none; /* No underline to make it look cleaner */
+    margin-top: 20px;
+    border: 1px solid #ccc; /* Subtle border */
+    font-size: 36px; /* Larger font size */
+    font-weight: bold; /* Bold font weight */
+    border-radius: 5px; /* Rounded corners */
+}
 
 /* Responsive styles unchanged */
 @media screen and (max-width: 600px) {
