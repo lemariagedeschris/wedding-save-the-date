@@ -117,7 +117,7 @@ p {
 
 .special-date {
     font-family: 'Dancing Script', cursive; /* Using Dancing Script for the date */
-    font-size: 32px; /* Larger font size for the date */
+    font-size: 60px; /* Larger font size for the date */
     color: #333; /* Optional: changing the color to make it stand out */
     margin-bottom: 10px; /* Space between the date and the countdown */
 }
